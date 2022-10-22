@@ -67,8 +67,15 @@ def callwebcan(x):
 
         with PolygonScan("WDDZGYYWAGAC446V2JHQT93NW4F1TX6P9Q",False) as matic:
             save = (matic.get_acc_balance_by_token_and_contract_address("0x2977F845d2793461f58C0dc54eBD753076C5AD06",wallet))
-        print(save)
-
+        save = int(save)
+        if save == 1:
+            print("Bem vindo! Sua carteira {} está validado!".format(wallet))
+            time.sleep(1)
+        if save == 0:
+            time.sleep(1)
+            print("Infelizmente sua carteira {} não está permitida no evento!".format(wallet))
+            
+            return 0
 
 
     except:
