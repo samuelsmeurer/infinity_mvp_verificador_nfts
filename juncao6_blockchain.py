@@ -8,7 +8,7 @@ cap = cv2.VideoCapture(0)
 detector = cv2.QRCodeDetector()
 a = ''
 var = -1
-data = "oie"
+data = "ss"
 while True:
     _, img = cap.read()
     var = var +1 
@@ -37,7 +37,9 @@ while True:
         var = -1
         #while cv2.waitKey(1000) != ord('q'):
         #    a = 2
-
+    if var == 100:
+        var =1
+    print(var)
     cv2.imshow("QRCODEscanner", img)
-    if cv2.waitKey(1) == ord("H"):
+    if cv2.waitKey(1) == ord("h"):
         b = 2
