@@ -3,7 +3,7 @@ import time
 from polygonscan import PolygonScan
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 # initialize the cv2 QRCode detector
 detector = cv2.QRCodeDetector()
 a = ''
@@ -37,9 +37,8 @@ while True:
         var = -1
         #while cv2.waitKey(1000) != ord('q'):
         #    a = 2
-    if var == 100:
+    if var >= 50:
         var =1
-    print(var)
     cv2.imshow("QRCODEscanner", img)
     if cv2.waitKey(1) == ord("h"):
         b = 2

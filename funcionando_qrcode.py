@@ -23,7 +23,8 @@ while True:
         var = -1
         #while cv2.waitKey(1000) != ord('q'):
         #    a = 2
-
+    if var >= 50:
+        var =8
     cv2.imshow("QRCODEscanner", img)
     if cv2.waitKey(1) == ord("H"):
         b = 2
