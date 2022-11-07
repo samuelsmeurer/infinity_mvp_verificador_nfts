@@ -3,7 +3,7 @@ import time
 from polygonscan import PolygonScan
 
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 # initialize the cv2 QRCode detector
 detector = cv2.QRCodeDetector()
 a = ''
@@ -12,7 +12,7 @@ data = "ss"
 while True:
     _, img = cap.read()
     var = var +1 
-
+    print(var)
     if var >= 7:
         data, bbox, _ = detector.detectAndDecode(img)
     if data != a:
@@ -33,7 +33,7 @@ while True:
                         print("Infelizmente sua carteira {} não está permitida no evento!".format(wallet))
             else:
                 print("sua informação {} não representa uma carteira virtual!".format(data))
-            cv2.waitKey(2000)
+#            cv2.waitKey(2000)
         var = -1
         #while cv2.waitKey(1000) != ord('q'):
         #    a = 2
